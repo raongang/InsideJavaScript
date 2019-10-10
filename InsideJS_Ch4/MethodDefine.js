@@ -64,3 +64,5 @@ console.log(factorialVar(3));
 //console.log(factorial(3)); //ReferenceError: factorial is not defined
 
 
+
+
