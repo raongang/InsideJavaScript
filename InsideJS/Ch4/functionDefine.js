@@ -7,7 +7,7 @@
 
 // 1. 함수 리터럴 선언
 // 함수명인 add 가 없는 경우도 있음. 이를 익명함수라고 함. 매개변수 타입이 없음
-console.log("1. 함수 리털러 선언방시긍로 선언");
+console.log("1. 함수 리털러 선언방식으로 선언");
 
 function add(x,y){
     return x+y;
@@ -73,11 +73,4 @@ console.log(factorialVar(3));
 console.log("Function() 생성자 함수");
 var add = new Function('x','y','return x+y');
 console.log(add(3,4));
-
-
-
-
-
-
-
 
