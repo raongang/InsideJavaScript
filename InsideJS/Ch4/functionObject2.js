@@ -1,4 +1,7 @@
-/** 4.3.1 callback function 
+/**
+ *  4.3 함수의 다양한 형태
+ * 
+ *  4.3.1 callback function 
  *    - 함수표현식에서 이름을 붙이지 않아도 되는 익명함수의 대표적인 용도가 콜백함수(ex. 이벤트핸들러처리)
  *    
  *     정의 
@@ -26,7 +29,7 @@
 
 /** 4.3.2 즉시 함수 
  *   - 함수의 정의와 동시에 바로 실행하는 함수로 익명 함수를 응용한 형태
- *   - 최초 1번만 사용 가능.
+ *   - 용도 : 최초 1번만 사용 가능(초기화코드) , jquery
  *   
  *   생성방법
  *     1. 함수이름 여부와 상관없이 ()로 function을 감싼다
@@ -37,6 +40,52 @@
 (function(name) {
 	console.log('this is the immediate function -> ' + name);
 })('foo');
+
+/** 4.3.3 내부함수 
+ * */
+
+//ex.4-18
+function parent(){
+	var a = 100;
+	var b = 200;
+
+	//child 내부함수 정의
+	function child(){
+		var b = 300;
+		var c = 400;
+		
+		console.log(a); //스코프체이닝 때문에 자신의 둘러싼 외부함수의 변수에 접근가능.
+		console.log(b);
+	}
+	child();
+}
+parent();
+//child(); -- child is not defined ( 자바스크립트의 함수 스코프 때문 ) 
+
+/* ex4-19 함수 스코프 외부에서 내부를 호출할수 있는 예제 코드 (클로저)
+ *  - 클로저 : 실행이 끝난 parent2와 같은 부모 함수 스코프의 변수를 참조하는 inner()와 같은 함수
+ */
+
+function parent2(){
+	var a2 = 100;
+	//child 내부 함수
+
+	var child2 = function(){
+		console.log(a2);
+	}
+	//child 함수 반환
+	return child2;
+}
+
+var inner = parent2();
+inner();
+
+
+
+
+
+
+
 
 
 

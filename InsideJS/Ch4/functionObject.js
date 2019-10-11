@@ -1,4 +1,6 @@
 /**
+ 4.2 함수 객체
+ 
  4.2.1자바스크립트에서는 함수도 객체(일급객체)이다
    - 함수도 객체처럼 프로퍼티를 가질 수 있다.
 */
@@ -53,6 +55,7 @@ var foo2 = function temp2(){ //함수를 리턴하는 foo() 함수 정의
 };
 
 var bar = foo2(); //foo()함수가 호출되면, 리턴값으로 전달되는 함수가 bar변수에 저장된다.
+console.log(bar);
 console.log(bar());
 
 //var bar = function(){ console.log('this function is the return value2');};
@@ -86,6 +89,8 @@ console.log("funcLength2 : " + funcLength2.length); //2
 console.log("funcLength3 : " + funcLength3.length); //3
 
 /** 4.2.3.2 prototype property (이 부분 다시 체크)
+ *    - prototype 객체 네이밍은 자신과 연결된 함수의 prototype 프로퍼티 값을 그대로 이용한다.
+ *      ( ex. 함수 이름이 add() 면 프로토타입 객체는 add.prototype 
  * */
 
 //MyFunction()함수 정의
