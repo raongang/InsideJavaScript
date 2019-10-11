@@ -35,7 +35,8 @@ console.log(objB==objC);
 
 // 3. 참조에 의한 함수 호출 방식
 
-//4. 프로토 타입 ( 자바의 부모 객체 같은 거 )
+/* 4. 프로토 타입 ( 자바의 부모 객체 같은 거 )
+ */
 console.log("object print");
 
 var foo = {
