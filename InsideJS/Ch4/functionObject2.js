@@ -80,10 +80,19 @@ function parent2(){
 var inner = parent2();
 inner();
 
+/** 4.3.4 함수를 리턴하는 함수 */
+// ex4-20 - 4.2.2.3과 같은 방식
 
+var self = function(){
+	console.log('a');
+	
+	return function(){
+		console.log('b');
+	}
+}
 
-
-
+var a = self();
+a();
 
 
 
