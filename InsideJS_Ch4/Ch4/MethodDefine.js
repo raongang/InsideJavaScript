@@ -2,13 +2,13 @@
 *      1. 함수 선언 ( 함수 리터럴 방식으로 생성 )
 *      2. 함수 표현 ( 함수 리터럴 방식으로 생성)
 *      3. Function() 생성자 함수
-*
 *      ※ 함수도 일반 객체처럼 취급됨...
-*
 * */
 
 // 1. 함수 리터럴 선언
 // 함수명인 add 가 없는 경우도 있음. 이를 익명함수라고 함. 매개변수 타입이 없음
+console.log("1. 함수 리털러 선언방시긍로 선언");
+
 function add(x,y){
     return x+y;
 }
@@ -16,10 +16,12 @@ function add(x,y){
 // 2.함수 선언문 방식으로 함수 생성하기
 console.log("2.함수 선언문 방식으로 함수 생성하기");
 console.log("함수 선언문 방식으로 함수 생성시에는 반드시 함수명 정의!");
+console.log("함수 선언문 방식일 경우에는 끝에 ;를 붙이지 않는 것을 권장!");
 
 function add(x,y){
     return x+y;
 }
+
 console.log(add(3,4));
 
 /* 3.함수 표현식 방식으로 함수 생성하기
@@ -33,7 +35,7 @@ console.log(add(3,4));
  */
 
 console.log("3.함수 표현식 방식으로 함수 생성하기");
-
+console.log("함수표현식 방식에서는 끝에 ;을 붙이는 것을 권장");
 //여기서 add는 함수이름이 아닌 함수변수로 함수의 참조값을 가진다.
 //함수이름이 없는 익명함수이며, 익명함수를 이용하여 함수변수에 할당하는 것을 '익명함수를 이용한 함수 표현식 방법'(익명함수표현식)이라고 한다
 //함수 이름이 포함되어 있으면, 기명 함수 표현식
@@ -42,7 +44,6 @@ var plus = add;
 
 console.log(add(3,4));
 console.log(plus(5,6));
-
 
 console.log("3-1. 기명함수 표현식 사용");
 var add2 =  function sum(x,y){ return x+y; }
@@ -62,6 +63,20 @@ var factorialVar = function factorial(n){
 
 console.log(factorialVar(3));
 //console.log(factorial(3)); //ReferenceError: factorial is not defined
+
+/* 4. Function() 생성자 함수
+ *  - java script의 함수도 function() 이라는 기본 내장 함수로부터 생성된 객체.
+ *  - new Function(param1,param2,...paramN,functionBody)
+ *  - 자주 사용하지 않음
+ */
+
+console.log("Function() 생성자 함수");
+var add = new Function('x','y','return x+y');
+console.log(add(3,4));
+
+
+
+
 
 
 
