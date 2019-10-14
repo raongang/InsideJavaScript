@@ -198,12 +198,39 @@ console.log(baz);
 
 var qux = Person2('qux',20,'man');
 console.log(qux); //undefined   this는 함수호출이므로 전역객체인 window 객체로 바인딩됨. 동적으로 생성된다.
-console.log(window.name);
-console.log(window.age);
-console.log(window.gender);
+//console.log(window.name);
+//console.log(window.age);
+//console.log(window.gender);
 
 
+function Person3(_name,_age){
+	var name = _name;
+	var age = _age;
+	return function(){
+		return name + ' ' + age;
+	}
+}
 
+var temp = Person3('test','20');
+console.log(temp);
+console.log(temp())
+
+
+/* 생성자 함수 호출시의 오류를 해결하기 위해 사용하는 패턴 */
+console.log('생성자 함수 호출시의 오류를 해결하기 위해 사용하는 패턴');
+function A(arg){
+	if(!(this instanceof A))
+		return new A(arg);
+	
+	this.value = arg? arg:0;
+}
+
+var a = new A(100);
+var b = A(10);
+
+console.log(a.value);
+console.log(b.value);
+console.log(global.value); //global 은 node.js ...
 
 
 
