@@ -230,7 +230,7 @@ var b = A(10);
 
 console.log(a.value);
 console.log(b.value);
-console.log(global.value); //global 은 node.js ...
+console.log(global.value); //global 은 node.js ... 결과: NaN
 
 
 
