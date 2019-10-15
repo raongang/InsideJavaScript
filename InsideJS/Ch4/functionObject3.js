@@ -155,7 +155,7 @@ myObject3.fun11();
  *       - 기존 함수에 new 연산자를 붙여서 호출하면 해당 함수는 생성자 함수로 동작함.
  *       - 원치않는 생성자 함수의 호출을 방지하기 위해서 함수의 첫 문자를 대문자로 쓰기를 권고하고 있음.
  *       - 생성자 함수가 생성한 객체는 자신을 생성한 생성자 함수의 prototype 프로퍼티가 가르키는 객체를
- *         자신의 프로포타입객체로 설정한다. 
+ *         자신의 프로토 타입객체로 설정한다. 
  * */
 
 
@@ -167,12 +167,14 @@ var Person = function(name){
 	this.name = name;
 	//함수리턴
 }
+
+
 var con = new Person('con'); //con 객체 생성
 console.log(con.name);
 
 //ex 4-29 객체 생성 두 가지 방법(객체 리터럴 vs 생성자 함수) 
 
-//객체 리터럴 방식으로 foo객체 생성
+//객체 리터럴 방식으로 foo객체 생성 - 프로토타입(Object.prototype)
 var literObj = {
 		name : 'literal',
 		age : 35,
@@ -180,14 +182,15 @@ var literObj = {
 };
 console.dir(literObj);
 
-//생성자 함수 
+//생성자 함수 - 프로토타입(Person.prototype)
 function Person2(name,age, gender,position){
 	this.name = name;
 	this.age=age;
 	this.gender=gender;
 }
 
-//Person2 생성자 함수를 이용해 bar객체, baz객체 생성 
+// Person2 생성자 함수를 이용해 bar객체, baz객체 생성 
+// 자신을 생성한 생성자 함수의 prototype 프로퍼티가 가르키는 객체를 자신의 프로토타입 객체로 설정한다.
 var bar = new Person2('bar',33,'woman');
 console.dir(bar);
 
@@ -231,6 +234,14 @@ var b = A(10);
 console.log(a.value);
 console.log(b.value);
 console.log(global.value); //global 은 node.js ... 결과: NaN
+
+console.log
+
+
+/**
+ *  4.4.2.4 call 과 apply 메소드를 이용한 명시적인 this 바인딩 
+ */
+
 
 
 
