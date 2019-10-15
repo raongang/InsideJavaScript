@@ -5,7 +5,6 @@
  *   - 자바스크립트에서 함수를 호출할때 인수들과 함께 암묵적으로 arguments 객체가 함수내부로 전달됨.
  *       
  */
-
 //ex4-21 함수 형식에 맞춰 인자를 넘기지 않더라도 함수 호출이 가능함을 나타내는 예제코드
 function func(arg1, arg2){
 	console.log(arg1, arg2);
@@ -17,7 +16,6 @@ func(1,2);  // 1 2
 func(1,2,3); // 1 2
 
 //ex4-22 arguments(실제배열아님) 유사 배열 객체 예제코드
-
 //add() 함수
 function add(a,b){
 	//arguments 객체 출력
@@ -33,11 +31,9 @@ console.log(add(1,2,3)); //3
 //ex
 function sum(){
 	var  result = 0;
-	
 	for(var i=0; i<arguments.length; i++){
 		result+= arguments[i];
 	}
-	
 	return result;
 }
 
@@ -156,16 +152,13 @@ myObject3.fun11();
  *         자신의 프로토 타입객체로 설정한다. 
  * */
 
-
 //ex 4-28 생성자 함수의 동작방식
-
 //Person() 생성자 함수 
 var Person = function(name){
 	//함수 코드 실행전
 	this.name = name;
 	//함수리턴
 }
-
 
 var con = new Person('con'); //con 객체 생성
 console.log(con.name);
@@ -197,7 +190,7 @@ console.log(baz);
 
 //ex 4-30 new를 붙이지 않고 생성자 함수 호출시의 오류.
 var qux = Person2('qux',20,'man');
-console.log(qux); //undefined   this는 함수호출이므로 전역객체인 ㄴ 객체로 바인딩됨. 동적으로 생성된다.
+console.log(qux); //undefined   this는 함수호출이므로 전역객체인 객체로 바인딩됨. 동적으로 생성된다.
 //console.log(window.name);
 //console.log(window.age);
 //console.log(window.gender);
@@ -229,12 +222,11 @@ console.log(a.value);
 console.log(b.value);
 console.log(global.value); //global 은 node.js ... 결과: NaN
 
-
-
 /**
  *  4.4.2.4 call 과 apply 메소드를 이용한 명시적인 this 바인딩
  *    - 기능은 둘다 동일, 넘겨받는 인자의 형식만 다름. ( apply-배열형식, call-각각의 인자)
  *    - apply() 메소드를 호출하는 주체가 함수이며, apply()메소드도 this를 특정객체에 바인딩할 뿐 결국 본질적인 기능은 함수 호출.
+ *    - 모든 함수의 부모객체인 Function.prototype의 객체의 메소드로 call,apply가 포함되어 있다.
  *    
  */
 //ex 4-31 apply()메소드를 이용한 명시적인 this 바인딩
@@ -248,7 +240,6 @@ function PersonApply(name,age,gender){ //생성자 함수
 
 //foo 빈 객체 리터럴 방식으로 생성
 var fooEmpty = {};
-
 /* apply 메소드 호출
    fooEmpty 가 PersonApply() 함수에서 this로 바인딩됨.
    PersonApply('fooEmpty',30,'longman') 함수를 호출하면서 this를 fooEmpty객체에 
@@ -267,16 +258,61 @@ console.dir(fooEmpty);
 function myFunction(){
 	console.dir(arguments);
 	//에러 발생 arguments.shift(); 
-
-	/* */
+	/* Array.prototype.slice 메소드를 호출해라. 이때 this는 arugments 객체로 바인딩해라. */
 	var args = Array.prototype.slice.apply(arguments);
 	console.dir(args);
 }
 myFunction(1,2,3);
 
+/**
+  *   4.4.3 함수 리턴 
+  *      - 자바스크립트 함수는 return 이 없더라도 항상 리턴값을 반환한다.
+* */
 
+/**
+  *   4.4.3.1 규칙1) 일반 함수나 메소드는 리턴값을 지정하지 않을 경우, undefined 값이 리턴.
+  */
 
+//ex 4-34 return 문 없는 일반 함수의 리턴값 확인
 
+//noREturnFunc()함수
+var noReturnFunc = function(){
+	console.log('This function has no return statement');
+};
+var result = noReturnFunc();
+console.log(result);
+
+/**
+ *   4.4.3.2 규칙2)생성자 함수에 리턴값을 지정하지 않을 경우 생성된 객체가 리턴된다.
+ *     - this로 바인딩된 새로 생성된 객체가 리턴된다.
+ */
+
+//ex 4-35 생성자 함수에서 명시적으로 객체를 리턴했을 경우
+
+function ExcepPerson(name,age,gender){
+	this.name = name;
+	this.age = age;
+	this.gender = gender;
+	
+	//명시적으로 다른 객체 리턴 
+	return {name:'bar',age:20,gnede:'woman'};
+}
+
+var ExcepFoo = new Person('foo',30,'man');
+console.log(ExcepFoo);
+
+//ex 4-36 생성자 함수에서 명시적으로 기본타입(불린,숫자,문자열값)을 리턴했을 경우, 이를 무시하고 this로 바인딩된 객체가 리턴된다.
+
+function IgnorePerson(name,age,gender){
+	this.name = name;
+	this.age = age;
+	this.gender = gender;
+	
+	return 100;
+}
+
+var IgnoreFoo = new IgnorePerson('ignoreFoo',40,'man2');
+console.log(IgnoreFoo);
 
 
 
