@@ -16,7 +16,7 @@ func(1); // 1 undefined
 func(1,2);  // 1 2
 func(1,2,3); // 1 2
 
-//ex4-22 arguments 유사 배열 객체 예제코드
+//ex4-22 arguments(실제배열아님) 유사 배열 객체 예제코드
 
 //add() 함수
 function add(a,b){
@@ -119,7 +119,6 @@ var myObject2 ={
 			fun2();
 		}//func1
 };
-
 myObject2.fun1();
 
 //ex4-27 내부 함수의 this 바인딩 문제를 해결한 예제코드 ( ※  보통 this를 저장하는 변수를 that으로 사용한다 ) 
@@ -148,7 +147,6 @@ var myObject3 ={
 };
 
 myObject3.fun11();
-
 
 /**
  *     4.4.2.3 생성자 함수를 호출할때 this 바인딩 (중요)
@@ -198,13 +196,11 @@ var baz = new Person2('baz',25,'woman');
 console.log(baz);
 
 //ex 4-30 new를 붙이지 않고 생성자 함수 호출시의 오류.
-
 var qux = Person2('qux',20,'man');
-console.log(qux); //undefined   this는 함수호출이므로 전역객체인 window 객체로 바인딩됨. 동적으로 생성된다.
+console.log(qux); //undefined   this는 함수호출이므로 전역객체인 ㄴ 객체로 바인딩됨. 동적으로 생성된다.
 //console.log(window.name);
 //console.log(window.age);
 //console.log(window.gender);
-
 
 function Person3(_name,_age){
 	var name = _name;
@@ -213,7 +209,6 @@ function Person3(_name,_age){
 		return name + ' ' + age;
 	}
 }
-
 var temp = Person3('test','20');
 console.log(temp);
 console.log(temp())
@@ -224,7 +219,6 @@ console.log('생성자 함수 호출시의 오류를 해결하기 위해 사용�
 function A(arg){
 	if(!(this instanceof A))
 		return new A(arg);
-	
 	this.value = arg? arg:0;
 }
 
@@ -235,15 +229,50 @@ console.log(a.value);
 console.log(b.value);
 console.log(global.value); //global 은 node.js ... 결과: NaN
 
-console.log
 
 
 /**
- *  4.4.2.4 call 과 apply 메소드를 이용한 명시적인 this 바인딩 
+ *  4.4.2.4 call 과 apply 메소드를 이용한 명시적인 this 바인딩
+ *    - 기능은 둘다 동일, 넘겨받는 인자의 형식만 다름. ( apply-배열형식, call-각각의 인자)
+ *    - apply() 메소드를 호출하는 주체가 함수이며, apply()메소드도 this를 특정객체에 바인딩할 뿐 결국 본질적인 기능은 함수 호출.
+ *    
  */
+//ex 4-31 apply()메소드를 이용한 명시적인 this 바인딩
+console.log('ex 4-31 apply()메소드를 이용한 명시적인 this 바인딩');
 
+function PersonApply(name,age,gender){ //생성자 함수
+	this.name = name;
+	this.age = age;
+	this.gender = gender;
+}
 
+//foo 빈 객체 리터럴 방식으로 생성
+var fooEmpty = {};
 
+/* apply 메소드 호출
+   fooEmpty 가 PersonApply() 함수에서 this로 바인딩됨.
+   PersonApply('fooEmpty',30,'longman') 함수를 호출하면서 this를 fooEmpty객체에 
+   명시적으로 바인딩.
+*/
+PersonApply.apply(fooEmpty,['fooEmpty'],30,'longman'); 
+console.dir(fooEmpty);
+
+//call메소드호출
+PersonApply.call(fooEmpty,'fooEmpty',40,'shortman');
+console.dir(fooEmpty);
+
+//ex 4-32 apply, call 사용예 ( apply() 메소드를 활용한 arguments 객체의 배열표준 메소드 slice()활용)
+//유사배열 객체에서 배열메소드를 사용하는 것.
+
+function myFunction(){
+	console.dir(arguments);
+	//에러 발생 arguments.shift(); 
+
+	/* */
+	var args = Array.prototype.slice.apply(arguments);
+	console.dir(args);
+}
+myFunction(1,2,3);
 
 
 

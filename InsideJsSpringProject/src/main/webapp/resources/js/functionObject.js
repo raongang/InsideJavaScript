@@ -1,11 +1,8 @@
-var foo = {
-    name : 'foo',
-    major : 'computer science'
-};
+function myFunction(){
+	console.dir(arguments);
+	//에러 발생 arguments.shift(); 
 
-//객체 프로퍼티 read
-console.log("프로퍼티 Read");
-console.log(foo.name);
-console.log(foo['name']);
-console.log(foo.nickname); //undefined
-console.dir(foo);
+	var args = Array.prototype.slice.apply(arguments);
+	console.dir(args);
+}
+myFunction(1,2,3);
