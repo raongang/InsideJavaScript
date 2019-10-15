@@ -226,6 +226,7 @@ console.log(global.value); //global 은 node.js ... 결과: NaN
  *  4.4.2.4 call 과 apply 메소드를 이용한 명시적인 this 바인딩
  *    - 기능은 둘다 동일, 넘겨받는 인자의 형식만 다름. ( apply-배열형식, call-각각의 인자)
  *    - apply() 메소드를 호출하는 주체가 함수이며, apply()메소드도 this를 특정객체에 바인딩할 뿐 결국 본질적인 기능은 함수 호출.
+ *    - 자바스크립트는 함수 역시 객체이다. (함수 객체의 부모역할을 하는 프로토타입 객체를 Function.prototype 객체라고 명명한다.=>함수객체)
  *    - 모든 함수의 부모객체인 Function.prototype의 객체의 메소드로 call,apply가 포함되어 있다.
  *    
  */
