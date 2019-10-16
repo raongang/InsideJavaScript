@@ -42,6 +42,8 @@
  * */
 
 //ex.4-18
+
+console.log('ex4-18');
 function parent(){
 	var a = 100;
 	var b = 200;
@@ -62,6 +64,8 @@ parent();
 /* ex4-19 함수 스코프 외부에서 내부를 호출할수 있는 예제 코드 (클로저)
  *  - 클로저 : 실행이 끝난 parent2와 같은 부모 함수 스코프의 변수를 참조하는 inner()와 같은 함수
  */
+
+console.log('ex4-19');
 
 function parent2(){
 	var a2 = 100;

@@ -54,3 +54,7 @@ foo2.country='USA'; //프로퍼티 동적 생성
 
 console.log(foo2.country);
 console.log(bar2.country);
+
+
+
+
