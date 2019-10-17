@@ -10,7 +10,6 @@
  *     3. 함수 안의 코드를 실행할 경우
  */
 
-
 /* ex5-1 
 console.log("Ths is Global Context");
 
@@ -48,8 +47,18 @@ function execute(param1,param2){
 execute(3,4);
 
 /**
- *  5.2.1 활성 객체 생성
+ *  5.2.1 활성 객체 생성 ( execute() 를 실행시 ) 
  *    1) ex5-2의 함수를 실행하여 실행 컨텍스트 생성
  *    2) 활성객체 : 해당 컨텍스트에서 실행에 필요한 여러가지 정보를 담을 객체를 생성
  *    3) arguments 객체 생성
 */
+
+
+
+
+
+
+
+
+
+
