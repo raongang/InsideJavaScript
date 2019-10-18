@@ -60,13 +60,50 @@ execute(3,4);
  *    5) 변수 생성.
  *      - 실행 컨텍스트 내부에서 사용되는 지역변수를 생성.  
  *      - 변수 객체생성이 이루어지고 나서 값이 할당되므로 그전에는 변수들 (a,b,func)이 메모리에만 올라가 있는 상태가 된다.
- *    
  *    6) this바인딩.
- *    7) 코드 실행.    
- *      
+ *    7) 코드 실행.          
 */
 
 
+/**
+ *   5.3 스코프체인(필수 개념)
+ *     - C,JAVA와 다르게 for(){}, if{} 같은 구문은 유효범위가 없다. 함수만 유효범위가 존재
+ *     - [[scope]] - 유효범위를 나타내는 프로퍼티로, 함수내에서 리스트 형식으로 관리됨. 
+ *     - 각각의 함수는 [[scope]] 프로퍼티로 자신이 생성된 실행 컨텍스트의 스코프 체인을 참조한다.
+ *     - 함수가 실행되는 순간 실행 컨텍스트가 만들어지고, 이 실행 컨텍스트는 실행된 함수의 [[scope]] 프로퍼티를 기반으로 새로운 스코프 체인을 만든다.
+ *     
+ * */
+
+
+/** 5.3.1 전역실행 컨텍스트의 스코프 체인 */
+//ex5-3 함수가 없는 전역코드로 실행시 전역 실행 컨텍스트가 생성되고, 변수객체가 만들어진다.
+console.log('전역실행 컨텍스트의 스코프 체인 ');
+
+var var1 = 1;
+var var2 = 2;
+
+console.log(var1);
+console.log(var2);
+
+/** 5.3.2 함수를 호출한경우 생성되는 실행 컨텍스트의 스코프 체인 */
+
+//ex5-4.
+console.log('함수를 호출한경우 생성되는 실행 컨텍스트의 스코프 체인');
+
+var temp1 = 10;
+var temp2 = 20;
+
+function scopeFunction(){
+	var scopeTemp1 = 100;
+	var scopeTemp2 = 200;
+	
+	console.log("scopeTemp1 >> " + scopeTemp1);
+	console.log("scopeTemp2 >> " + scopeTemp2);
+} 
+
+scopeFunction();
+//console.log("scopeTemp1 >> " + scopeTemp1);
+//console.log("scopeTemp2 >> " + scopeTemp2);
 
 
 
