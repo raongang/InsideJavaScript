@@ -67,6 +67,7 @@ execute(3,4);
 
 /**
  *   5.3 스코프체인(필수 개념)
+ *     - 현재 실행컨텍스트의 변수객체(활성객체) + 상위 컨텍스트의 스코프체인ㄴ
  *     - C,JAVA와 다르게 for(){}, if{} 같은 구문은 유효범위가 없다. 함수만 유효범위가 존재
  *     - [[scope]] - 유효범위를 나타내는 프로퍼티로, 함수내에서 리스트 형식으로 관리됨. 
  *     - 각각의 함수는 [[scope]] 프로퍼티로 자신이 생성된 실행 컨텍스트의 스코프 체인을 참조한다.
@@ -77,7 +78,7 @@ execute(3,4);
 
 /** 5.3.1 전역실행 컨텍스트의 스코프 체인 */
 //ex5-3 함수가 없는 전역코드로 실행시 전역 실행 컨텍스트가 생성되고, 변수객체가 만들어진다.
-console.log('전역실행 컨텍스트의 스코프 체인 ');
+console.log('전역실행 컨텍스트의 스코프 체인');
 
 var var1 = 1;
 var var2 = 2;
@@ -97,16 +98,14 @@ function scopeFunction(){
 	var scopeTemp1 = 100;
 	var scopeTemp2 = 200;
 	
-	console.log("scopeTemp1 >> " + scopeTemp1);
-	console.log("scopeTemp2 >> " + scopeTemp2);
+	console.log("scopeTemp1 >> " + scopeTemp1); //100
+	console.log("scopeTemp2 >> " + scopeTemp2); //200
+	
 } 
 
 scopeFunction();
-//console.log("scopeTemp1 >> " + scopeTemp1);
-//console.log("scopeTemp2 >> " + scopeTemp2);
+//console.log("scopeTemp1 >> " + scopeTemp1); error
+//console.log("scopeTemp2 >> " + scopeTemp2); error
 
 
-
-
-
-
+//ex5-5
