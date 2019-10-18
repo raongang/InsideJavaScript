@@ -7,3 +7,4 @@ function ChaPerson(name){
 console.log(ChaPerson.prototype.consturctor);
 var chaFoo = new ChaPerson('chaFoo');
 console.log(chaFoo.country);
+
