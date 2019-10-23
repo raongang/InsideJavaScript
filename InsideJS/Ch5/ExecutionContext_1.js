@@ -108,4 +108,7 @@ scopeFunction();
 //console.log("scopeTemp2 >> " + scopeTemp2); error
 
 
-//ex5-5
+
+
+
+
