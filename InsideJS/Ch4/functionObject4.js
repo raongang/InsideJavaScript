@@ -89,6 +89,7 @@ console.dir(String.prototype);
  *  4.5.6 프로토 타입도 자바 스크립트 객체이다.
  *    - 함수가 생성될때, 자신의 prototype프로퍼티에 연결되는 프로토타입 객체는 디폴트로 constructor 프로퍼티만을 가진 객체이다.
  *    - 동적으로 프로퍼티 추가/삭제가 가능하며 실시간 프로토타입 체이닝에 적용된다.
+ *    - 
  */
 
 //ex 4-41 프로토 타입 객체의 동적 메소드 생성 예제 코드
@@ -126,6 +127,3 @@ console.log(thisObj.getName()); //param1
 
 thisFunction.prototype.name ='person';
 console.log(thisFunction.prototype.getName()); //person
-
-
-
