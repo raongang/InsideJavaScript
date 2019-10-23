@@ -53,4 +53,3 @@ var bar = new Array(1,2,3);
 console.log(bar);
 console.log(bar.length);
 
-

@@ -28,7 +28,7 @@ function printFunc(func){
 	console.log(func());
 }
 
-printFunc(printValue); //value1
+printFunc(printValue); //value1		
 */
 
 //NOTE_함수 호이스팅의 이해
@@ -36,7 +36,7 @@ printFunc(printValue); //value1
 foo();
 bar();
 
-var foo= function(){
+var foo= function(){									
 	console.log("foo and x = " + x);
 	
 };
@@ -46,5 +46,4 @@ function bar(){
 }
 
 var x = 1;
-
 
