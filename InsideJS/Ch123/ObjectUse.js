@@ -32,7 +32,7 @@ foo['full-name'] = 'foo bar';
 console.log(foo['full-name']);
 // NaN(Not a Number) -수치연산을 해서 정상적인 값을 얻지 못할 경우 출력
 // full.full - undefiend , full.name - undefined => undefined - undefined = NaN
-console.log(foo.full-name);
+//console.log(foo.full-name);//error
 console.log(1-'hello'); // Nan
 console.log(foo.full);
 console.log(foo.name);

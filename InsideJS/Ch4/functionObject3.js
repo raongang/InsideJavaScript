@@ -156,7 +156,7 @@ myObject3.fun11();
 //Person() 생성자 함수 
 var Person = function(name){
 	//함수 코드 실행전
-	this.name = name;
+	this.name = name;  //빈 객체에 this 바인딩 
 	//함수리턴
 }
 

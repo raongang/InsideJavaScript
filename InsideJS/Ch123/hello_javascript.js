@@ -46,7 +46,6 @@ var nullVar=null; //null 타입 변수 선언
 console.log(typeof nullVar==null); //false
 console.log(nullVar==null); //true
 
-
 console.log(
     typeof intNum,
     typeof floatNum,
@@ -58,5 +57,6 @@ console.log(
     typeof nullVar // 결과 object
 
 );
+
 
 

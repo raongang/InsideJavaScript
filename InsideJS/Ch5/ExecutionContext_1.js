@@ -21,7 +21,6 @@ function ExContext2(){
 ExContext2();
 */
 
-
 /** 
  *   5.2 실행 컨텍스트 생성 과정
  *     - 활성 객체와 변수 객체
@@ -33,8 +32,6 @@ function execute(param1,param2){
 	var a=1, b=2;
 	
 	function func(){
-		
-		
 		return a+b;
 	}
 	return param1+param2+func();
