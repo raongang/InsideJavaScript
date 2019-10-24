@@ -2,14 +2,13 @@
  *   실행 컨텍스트(execution context)
  *     - 실행 가능한 코드를 형상화하고 구분하는 추상적인 개념
  *     - 실행 가능한 자바스크립트 코드 블록(대부분 함수)을 실행되는 환경
- *   실행 컨텍스트가 형성되는 경우
+ *   전역 실행 컨텍스트가 형성되는 경우
  *     1. 전역코드 ( 전역 실행 컨텍스트가 생성됨 - argument 객체가 없다. ) 
  *     2. eval()함수로 실행되는 코드
  *     3. 함수 안의 코드를 실행할 경우
  */
 
 /* ex5-1 
-
 function ExContext1(){
 	console.log("This is ExContext1");
 }
@@ -22,6 +21,7 @@ function ExContext2(){
 ExContext2();
 */
 
+
 /** 
  *   5.2 실행 컨텍스트 생성 과정
  *     - 활성 객체와 변수 객체
@@ -29,7 +29,6 @@ ExContext2();
  */
 
 //ex5-2
-
 function execute(param1,param2){
 	var a=1, b=2;
 	
@@ -63,7 +62,7 @@ execute(3,4);
 
 /**
  *   5.3 스코프체인(필수 개념)
- *     - 현재 실행컨텍스트의 변수객체(활성객체) + 상위 컨텍스트의 스코프체인ㄴ
+ *     - 현재 실행컨텍스트의 변수객체(활성객체) + 상위 컨텍스트의 스코프체인
  *     - C,JAVA와 다르게 for(){}, if{} 같은 구문은 유효범위가 없다. 함수만 유효범위가 존재
  *     - [[scope]] - 유효범위를 나타내는 프로퍼티로, 함수내에서 리스트 형식으로 관리됨. 
  *     - 각각의 함수는 [[scope]] 프로퍼티로 자신이 생성된 실행 컨텍스트의 스코프 체인을 참조한다.
@@ -107,12 +106,4 @@ function scopeFunction(){
 scopeFunction();
 //console.log("scopeTemp1 >> " + scopeTemp1); error
 //console.log("scopeTemp2 >> " + scopeTemp2); error
-
-
-
-
-
-
-
-
 

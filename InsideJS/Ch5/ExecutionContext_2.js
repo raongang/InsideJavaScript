@@ -1,4 +1,5 @@
 //ex5-5
+
 /*
 var value="value1";
 
@@ -13,9 +14,9 @@ function printFunc(){
 printFunc(); // value2
 */
 
-//ex5-6
+//ex5-6 ) 이 예제 다시 체크.
+//각 함수객체가 처음 생성될때 [[scope]]는 전역객체의 [[scope]]를 참조한다.
 //최초 실행시 전역 실행 컨텍스트가 만들어지고, 변수객체(활성객체)가 생성됨. 이때, [[scope]]는 전역객체를 가르킨다.
-/*
 var value="value1";
 
 function printValue(){
@@ -26,12 +27,9 @@ function printFunc(func){
 	var value="value2";
 	console.log(func());
 }
-
 printFunc(printValue); //value1		
-*/
 
 //NOTE_함수 호이스팅의 이해
-
 
 //foo();
 bar();

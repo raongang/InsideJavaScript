@@ -202,6 +202,7 @@ function Person3(_name,_age){
 		return name + ' ' + age;
 	}
 }
+
 var temp = Person3('test','20');
 console.log(temp);
 console.log(temp())
