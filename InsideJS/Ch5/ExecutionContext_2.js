@@ -30,7 +30,6 @@ function printFunc(func){
 printFunc(printValue); //value1		
 
 //NOTE_함수 호이스팅의 이해
-
 //foo();
 bar();
 var foo= function(){									
