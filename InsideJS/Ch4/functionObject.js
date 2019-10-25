@@ -68,12 +68,8 @@ console.log(bar());
 */
 
 //add()함수 객체 프로퍼티를 출력하는 코드
-function getFunctionProperty(x,y){
-	return x+y;
-}
 
 console.dir(getFunctionProperty);
-
 
 /** 4.2.3.1 length property 
  *   - 함수 객체의 length 프로퍼티는 함수를 작성할 때 정의한 인자 개수.
