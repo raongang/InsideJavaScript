@@ -66,10 +66,10 @@ console.log(student.getAge());
 
 
 
-
+/* 테스트모듈
 var ori =  function F(){};
 console.log(ori);
-
+console.dir(ori);
 
 var added2 = { 
 		setAge : function(age){
@@ -80,5 +80,9 @@ var added2 = {
 		}
 };
 
+added2=ori;
+console.log(added2);
+console.dir(added2);
+*/
 
 
