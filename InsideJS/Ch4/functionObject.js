@@ -1,7 +1,7 @@
 /**
  4.2 함수 객체
  
- 4.2.1자바스크립트에서는 함수도 객체(일급객체)이다
+ 4.2.1 자바스크립트에서는 함수도 객체(일급객체)이다  (중요)
    - 함수도 객체처럼 프로퍼티를 가질 수 있다.
 */
 function add(x,y){
@@ -63,12 +63,14 @@ console.log(bar());
 
 /** 4.2.3 함수 객체의 기본 프로퍼티
 	 - 함수는 객체이며 표준 프로퍼티가 정의되어 있다
-	 - 모든 함수들의 부모객체는 Function Prototype 객체.
+	 - 모든 함수들의 부모객체[[__prototype__]]는 Function Prototype 객체.
 	 - Function Prototype 객체 그 자체는 예외적으로 부모가 자바스크립트의 모든 객체의 조상인 Object.prototype 객체임.
 */
 
 //add()함수 객체 프로퍼티를 출력하는 코드
-
+function getFunctionProperty(x,y){
+	return x+y;
+}
 console.dir(getFunctionProperty);
 
 /** 4.2.3.1 length property 

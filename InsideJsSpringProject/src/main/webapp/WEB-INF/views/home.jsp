@@ -1,11 +1,9 @@
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
-
-<script src="/resources/js/functionObject.js?ver=1"></script>
-
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
+<script src="/resources/js/functionObject.js?ver=1"></script>
 	<title>Home</title>
 </head>
 <body>

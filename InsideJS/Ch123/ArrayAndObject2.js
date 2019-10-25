@@ -2,7 +2,7 @@
 /* 유사 배열 객체
 *   - length 프로퍼티를 가진 객체.
 *   - 객체임에도 JS 표준 배열 메소드를 사용가능.
-*   -  arguments 객체나 jQuery 객체가 유사 배열 객체 형태로 되어 있음.
+*   - arguments 객체나 jQuery 객체가 유사 배열 객체 형태로 되어 있음.
 */
 
 var arr = ['bar'];

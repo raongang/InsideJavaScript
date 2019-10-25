@@ -26,16 +26,18 @@ function create_object(o){
 	return new F();
 }
 
+
 function extend(obj,prop){
 	
 	console.log(obj); //{}
 	console.log('------------');
-	console.dir(prop);
-	//console.dir(this);
+	console.log(prop);
+	console.log('------------');
 	
 	if(!prop) { prop = obj, obj = this; } //this : window객체
 	
-	console.dir(prop);
+	console.log(prop);
+
 	
 	for(var i in prop){
 	
@@ -49,7 +51,7 @@ function extend(obj,prop){
 
 var student = create_object(person);
 
-var added = {
+var added = { 
 		setAge : function(age){
 			this.age = age;
 		},
@@ -61,4 +63,22 @@ var added = {
 extend(student,added);
 student.setAge(25);
 console.log(student.getAge());
+
+
+
+
+var ori =  function F(){};
+console.log(ori);
+
+
+var added2 = { 
+		setAge : function(age){
+			this.age = age;
+		},
+		getAge : function(){
+			return this.age;
+		}
+};
+
+
 

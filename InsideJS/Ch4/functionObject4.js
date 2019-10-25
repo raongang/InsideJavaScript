@@ -29,7 +29,7 @@ console.dir(myFunction.prototype.constructor);
  */
 
 //객체리터럴로 생성한 객체는 Object()라는 내장 생성자 함수로 생성된 것.
-// Object.prototype
+// [[__prototype__]] -> Object.prototype
 var myObject ={
 	name : 'foo',
 	sayName : function(){
