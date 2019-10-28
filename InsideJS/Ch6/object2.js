@@ -33,7 +33,9 @@ var person = {
 
 function create_object(o){
 	function F(){}
+	console.dir(F);
 	F.prototype=o; 
+	console.dir(F.prototype);
 	return new F();
 }
 

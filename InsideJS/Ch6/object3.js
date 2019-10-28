@@ -1,5 +1,5 @@
 
-/** extend() - 객체에 자신이 원한느 객체 혹은 함수를 추가.
+/** extend() - 객체에 자신이 원하는 객체 혹은 함수를 추가.
     jQuery extend() 구현
 
 jQuery.extend = jQuery.fn.enxtend = function(obj,prop){
@@ -15,6 +15,7 @@ var person = {
 	getName : function(){
 		return this.name;
 	},
+	
 	setName : function(arg){
 		this.name = arg;
 	}
@@ -23,30 +24,24 @@ var person = {
 function create_object(o){
 	function F(){};
 	F.prototype = o;
+	//console.log(F.prototype);
 	return new F();
 }
 
 
-function extend(obj,prop){
+function extend(student,added){
 	
-	console.log(obj); //{}
-	console.log('------------');
-	console.log(prop);
-	console.log('------------');
+	console.dir(student);
+	console.dir(added);
 	
-	if(!prop) { prop = obj, obj = this; } //this : window객체
-	
-	console.log(prop);
-
-	
-	for(var i in prop){
-	
-		console.log(obj[i]);
-		console.log(prop[i]);
+	if(!added) { added = student, student = this; } //this : window객체
+	for(var i in added){
+		console.log('student['+i+'] >>' + student[i]);
+		console.log('added['+i+'] >>' + added[i]);
 		
-		obj[i] = prop[i]; //객체접근방식
+		student[i] = added[i]; //객체접근방식
 	}
-	return obj;
+	return student;
 }
 
 var student = create_object(person);
@@ -61,28 +56,6 @@ var added = {
 };
 
 extend(student,added);
-student.setAge(25);
-console.log(student.getAge());
-
-
-
-/* 테스트모듈
-var ori =  function F(){};
-console.log(ori);
-console.dir(ori);
-
-var added2 = { 
-		setAge : function(age){
-			this.age = age;
-		},
-		getAge : function(){
-			return this.age;
-		}
-};
-
-added2=ori;
-console.log(added2);
-console.dir(added2);
-*/
-
+//student.setAge(25);
+//console.log(student.getAge());
 
