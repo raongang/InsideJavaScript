@@ -41,7 +41,7 @@ console.log(sum(1,2,3));
 console.log(sum(1,2,3,4,5,6,7,8,9));
 
 /**
- *   4.4.2 호출패턴과 this 바인딩(객체참조)
+ *   4.4.2.1 호출패턴과 this 바인딩(객체참조)
  *     - 자바스크립트에서는 함수를 호출할때 기존 매개변수로 전달되는 인자값에 더해, arguments 객체 및 this인자가 함수 내부로 암묵적으로 전달된다. 
  *        
  * */
@@ -300,12 +300,14 @@ function ExcepPerson(name,age,gender){
 	//명시적으로 다른 객체 리턴 
 	return {name:'bar',age:20,gnede:'woman'};
 }
-
-var ExcepFoo = new Person('foo',30,'man');
+console.log('ex 4-35');
+var ExcepFoo = new ExcepPerson('foo',30,'man');
 console.log(ExcepFoo);
 
-//ex 4-36 생성자 함수에서 명시적으로 기본타입(불린,숫자,문자열값)을 리턴했을 경우, 이를 무시하고 this로 바인딩된 객체가 리턴된다.
 
+
+//ex 4-36 생성자 함수에서 명시적으로 기본타입(불린,숫자,문자열값)을 리턴했을 경우, 이를 무시하고 this로 바인딩된 객체가 리턴된다.
+console.log('ex 4-36');
 function IgnorePerson(name,age,gender){
 	this.name = name;
 	this.age = age;

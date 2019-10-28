@@ -15,7 +15,6 @@ var person = {
 	getName : function(){
 		return this.name;
 	},
-	
 	setName : function(arg){
 		this.name = arg;
 	}
@@ -28,20 +27,21 @@ function create_object(o){
 	return new F();
 }
 
-
 function extend(student,added){
+	//console.dir(student);
+	//console.dir(added);
 	
-	console.dir(student);
-	console.dir(added);
+	if(!added) { added = student} //student = this; } 
 	
-	if(!added) { added = student, student = this; } //this : window객체
 	for(var i in added){
 		console.log('student['+i+'] >>' + student[i]);
+		console.log('-------------------');
 		console.log('added['+i+'] >>' + added[i]);
 		
 		student[i] = added[i]; //객체접근방식
 	}
-	return student;
+	
+	//return student;
 }
 
 var student = create_object(person);
@@ -56,6 +56,6 @@ var added = {
 };
 
 extend(student,added);
-//student.setAge(25);
-//console.log(student.getAge());
+student.setAge(25);
+console.log(student.getAge());
 
