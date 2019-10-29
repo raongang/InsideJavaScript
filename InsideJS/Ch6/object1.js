@@ -39,7 +39,18 @@ console.log(me.getName()); //jamjoo
 
 
 //Person가 없으니 프로토타입 체이닝에 따라 부모Prototype에 선언.
+/*
 Function.prototype.method = function(name,func){
+	
+	console.dir(this.prototype);
+	
+	//prototype에 특수문자가 있으니 [] 표현식으로 써야함.
+	if(!this.prototype[name])
+		this.prototype[name] = func;
+
+}*/
+
+Function.prototype.method=function(name,func){
 	if(!this.prototype[name])
 		this.prototype[name] = func;
 }
@@ -47,11 +58,11 @@ Function.prototype.method = function(name,func){
 function Person(arg){
 	this.name = arg;
 }
-/*
+
 Person.method("setName",function(value){
 	this.name = value; 
 });
-*/
+
 Person.method("getName",function(){ //프로퍼티 만드는게 아니라 메소드호출 구문임.
 	return this.name; 
 });

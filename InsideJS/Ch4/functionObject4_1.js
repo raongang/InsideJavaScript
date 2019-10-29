@@ -40,7 +40,7 @@ console.log(bar.constructor); //Object()
 function Person2(name){
 	this.name = name;
 }
-
+ 
 Person2.prototype.country='Korea';
 
 var foo2 = new Person2('foo2'); //프로토타입 체이닝 발생

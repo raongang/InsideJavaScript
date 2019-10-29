@@ -248,7 +248,8 @@ var fooEmpty = {};
    PersonApply('fooEmpty',30,'longman') 함수를 호출하면서 this를 fooEmpty객체에 
    명시적으로 바인딩.
 */
-PersonApply.apply(fooEmpty,['fooEmpty'],30,'longman'); 
+
+PersonApply.apply(fooEmpty,['fooEmpty',30,'longman']); 
 console.dir(fooEmpty);
 
 //call메소드호출
