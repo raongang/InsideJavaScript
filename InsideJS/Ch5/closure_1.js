@@ -26,7 +26,6 @@ var inner = outerFunc();
 // inner는 function(){ console.log("x >> " + x); } 함수를 리턴 받는데 이때 이미 사리진 outerFunc의 지역변수 var x를 참고할려고 한다.
 // outerFunc 실행 컨텍스트가 종료됨.
 inner(); // x >> 10;
- 
 
 //ex5-8 
 function outerFunc2(arg1,arg2){
@@ -39,13 +38,3 @@ function outerFunc2(arg1,arg2){
 }
 var exam1 = outerFunc2(2,4)   
 exam1(2); //0.6
-
-
-
-
-
-
-
-
-
-

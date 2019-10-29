@@ -15,14 +15,15 @@ HelloFunc.prototype.call = function(func){
 }
 
 var userFunc = function(gretting){
+	console.log('-this execute-');
 	console.log(gretting);
 }
 
 var objHello = new HelloFunc();
 objHello.func = userFunc;
 
-//console.dir(objHello);
-//objHello.call();
+console.dir(objHello);
+objHello.call();
 
 
 //ex5-10

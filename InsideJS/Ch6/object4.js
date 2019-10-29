@@ -30,8 +30,6 @@ function Student(arg){
 	 *       - 생성자가 함수가 생성한 객체(빈 객체)에 this를 바인딩한다. 
 	 */       
 	Person.apply(this,arguments); //문제점 해결  super()와 같은 역할.
-	
-
 }
 
 var you = new Person("iamhjoo"); 

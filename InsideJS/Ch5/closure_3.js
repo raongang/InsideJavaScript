@@ -26,6 +26,7 @@ var str = getCompletedStr('zzoon','seoul',16);
 console.log(str);
 */
 
+
 //ex5-12 클로저와 즉시함수를 이용한 5-11의 문제점 해결 
 
 //getCompletedStr : 익명의 함수를 즉시실행시켜 반환되는 함수를 할당
