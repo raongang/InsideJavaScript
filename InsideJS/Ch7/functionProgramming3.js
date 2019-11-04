@@ -67,6 +67,8 @@ var obj = new mywrap('zzoonnnn');
 // undefined || 3 => 3
 
 function each(obj,fn,args){
+	
+	
 	if(obj.length == undefined){
 		for(var i in obj){
 //			console.log('obj[i] >> ' + obj[i]);
@@ -77,26 +79,30 @@ function each(obj,fn,args){
 		for(var i=0; i< obj.length; i++){
 //			console.log('obj[i] >> ' + obj[i]); 
 //			console.log('[i,obj[i]] >> ' + [i,obj[i]]); 
+			//apply는 배열형태로 넘긴다. 여기서 [i,obj[i]] 는 인자가 2개인거임.
+			//obj[i] 는 Number 객체로 매핑됨..
+			// i -> idx , obj[i] -> num으로 간다.
 			fn.apply(obj[i], args || [i,obj[i]]);
 		}
 	}
 	return obj;
 };
 
-each([1,2,3], function(idx,num){
-	console.log('this >> ' + this);
-	console.log(idx + " : " + num);
-});
-
-//var zzoon = {
-//		name : 'test',
-//		age : 30,
-//		sex : 'Male'
-//};
+//each([1,2,3], function(idx,num){
+//	console.log('this >> ' + this); //123
+//	console.log(idx + " : " + num);
 //
-//each(zzoon, function(idx,value){
-//	console.log(idx + " : " + value);
 //});
+
+var zzoon = {
+		name : 'test',
+		age : 30,
+		sex : 'Male'
+};
+
+each(zzoon, function(idx,value){
+	console.log(idx + " : " + value);
+});
 
 
 /*  7.3.5.2 map
