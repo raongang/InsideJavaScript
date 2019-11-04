@@ -5,7 +5,7 @@
 //console.log(sum(1,2)); 3
 //console.log(sum.call(this,1,2)); 3
 
-
+/*
 type="zero";
 
 var type1 = { type:  "one" };
@@ -17,5 +17,13 @@ function getType(){
 
 //getType();
 getType.call(null);
-	
+*/
+
+
+function test(thisArg){
+	console.log(undefined || 3);
+}
+
+test();
+
 

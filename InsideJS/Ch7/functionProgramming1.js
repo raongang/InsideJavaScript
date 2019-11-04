@@ -108,6 +108,7 @@ var fooEmpty = {};
 PersonApply.apply(fooEmpty,['fooEmpty',30,'longman']); 
 //console.log(fooEmpty);
 
+
 /* 7.3.2 커링 
  *  - 특정 함수에서 정의된 인자의 일부를 넣어 고정시키고, 나머지를 인자로 받는 새로운 함수를 만드는 것.
 */
@@ -132,7 +133,7 @@ PersonApply.apply(fooEmpty,['fooEmpty',30,'longman']);
 	  - [Arguments] { '0': [Function: calculate], '1': 1 }
 	 
 	 뒤에 파라미터를 주면 해당 인덱스 1번째만 배열 형태로 만듬 - [ 1 ]
-*/	 
+
 	 
 function curry(func){
 	var args = Array.prototype.slice.call(arguments,1);
@@ -142,7 +143,6 @@ function curry(func){
 		return func.apply(null,args.concat(Array.prototype.slice.call(arguments)));
 	}
 }
-
 
 function calculate(a,b,c){
 //	console.log(a,b,c);
@@ -154,8 +154,32 @@ console.log(new_func1(1,3));
 
 //var new_func2 = curry(calculate,1,3);
 //console.log(new_func2(3));
+*/
+
+//ex7-8 calculate() 함수의 첫번째 세번째 인자값 고정
+function calculate(a,b,c){
+	return a*+b+c;
+}
 
 
+function curry2(func){
+	var args = Array.prototype.slice.call(arguments,1); // [1,undefined ,4] 	
+	console.log(args);
+	console.log(arguments);
+	
+	return function(){ // 클로저
+		var arg_idx=0;
+		for(var i=0; i< args.length && arg_idx<arguments.length; i++)  //arguments.length 는 new_func(3)에 의해 1임.
+			if(args[i] === undefined){ // === 타입변환을 거치지 않음.
+				args[i] =arguments[arg_idx++];
+			}
+		return func.apply(null,args);
+	}
+	
+}
+
+var new_func = curry2(calculate,1,undefined,4);
+console.log(new_func(3)); //7
 
 
 
