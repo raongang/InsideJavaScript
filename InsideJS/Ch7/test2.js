@@ -34,38 +34,19 @@ var shape = new Shape();
 shape.move(101,1);
  */
 
-function Shape(){
-	this.x = 0;
-	this.y = 0;
+
+func.prototype.printData = function(){
+	console.log('a >> ' + this.a);
+	console.log('b >> ' + this.b);
 }
 
-Shape.prototype={
-		move : function(x,y){
-			//console.log(this);
-			
-			this.x += x;
-			this.y += y;
-			
-			console.log(this.x);
-			console.log(this.y);
-			
-			function checkBounds(){
-				if(this.x > 100 ){
-					console.log('warning');
-				}
-			}//end f
-			checkBounds.call(this);
-		}//end m
+function func(){
+	var a=0;
+	var b=1;
 };
 
-var shape = new Shape();
-shape.move(101,1);
-
-
-
-
-
-
+var temp = func.printData;
+temp();
 
 
 

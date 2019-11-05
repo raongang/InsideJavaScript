@@ -106,7 +106,63 @@ each(zzoon, function(idx,value){
 
 
 /*  7.3.5.2 map
- */
+
+//ex7-12.
+
+Array.prototype.map = function(callback){
+	 //this가 null인지, 배열인지 체크 
+	 //callback이 함수인지 체크.
+	
+	var obj = this;
+	var value, mapped_value; 
+	var A = new Array(obj.length); //obj.length=3
+	
+	for(var i=0; i < obj.length; i++){
+		value = obj[i];
+		mapped_value = callback.call(null,value);
+		A[i] = mapped_value;
+	}
+	return A;
+};
+
+
+var arr = [1,2,3];
+var new_arr = arr.map(function(value){
+	return value*value;
+});
+
+console.log(new_arr); //[1,4,9]
+*/
+
+
+/*
+ * 7.3.5.3 reduce
+ *   - reduce()는 배열의 각 요소를 하나씩 꺼내서 사용자 함수를 적용시킨 뒤, 그 값을 계속해서 누적시키는 함수이다.
+*/
+
+//ex7-13
+
+Array.prototype.reduce = function(param1,param2){
+	//this가 null인지 배열인지 체크, param1이 함수인지 체크
+	
+	var obj = this;
+	var value, accumulated_value = 0;
+	
+	for(var i=0; i < obj.length; i++){
+		value = obj[i];
+		
+		accumulated_value = param1.call(null,accumulated_value,value); 
+		console.log('after accumulated_value >> ' + accumulated_value); 
+	}
+	return accumulated_value;
+};
+
+var arr2 = [1,2,3];
+var accumulated_value = arr2.reduce(function(a,b){ return a+b*b });   
+console.log('accumulated_value >> ' + accumulated_value);
+
+
+
 
 
 

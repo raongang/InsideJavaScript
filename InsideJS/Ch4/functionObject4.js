@@ -73,6 +73,7 @@ console.dir(Person.prototype);
  *     - 자바의 모든 객체가 프로토타입 체이닝으로 Object.prototype에 정의한 메소드를 사용 가능.   
  *     - 숫자 : Number.prototype / 문자열 : String.prototype / 배열 : Array.prototype -> Object.prototype을 가지고 있음.
  *     - Object.prototype, String.prototype 같은 표준 빌트인 프로토타입 객체에도 사용자가 직접 정의한 메소드를 추가하는 것을 허용함.
+ *     
  * */
 
 //ex4-40 String 기본 타입에 메소드 추가.
