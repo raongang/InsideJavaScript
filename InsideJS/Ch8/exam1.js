@@ -12,4 +12,3 @@ var foo = new Person('foo');
 
 Function.prototype.sayHello = function(){ console.log(this.name);}
 
-foo();
