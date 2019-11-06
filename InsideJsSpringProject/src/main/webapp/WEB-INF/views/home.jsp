@@ -4,12 +4,18 @@
 <html lang="ko">
 <head>
 <script src="/resources/js/functionObject.js?ver=1"></script>
-	<title>Home</title>
+<%-- 
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+--%>
+<script src="/resources/js/jquery-1.0.js"></script>
+
+<title>Home</title>
 </head>
 <body>
-<h1>
-</h1>
+<div id="myDiv">Hello</div>
+<script>
+alert($("#myDiv").text());
 
-<P>  The time on the server is ${serverTime}. </P>
+</script>
 </body>
 </html>

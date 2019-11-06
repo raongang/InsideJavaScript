@@ -522,7 +522,8 @@ jQuery.extend({
 			return r;
 		}
 	],
-	find: function( t, context ) { // t= #myDiv , context = undefiend
+	find: function( t, context ) {
+		alert(test);
 		// Make sure that the context is a DOM Element
 		if ( context && context.nodeType == undefined )
 			context = null;
