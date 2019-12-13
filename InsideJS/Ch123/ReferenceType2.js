@@ -48,3 +48,12 @@ console.log(foo.toString());
 //프로토 타입 객체
 console.log(foo.toString());
 console.dir(foo);
+
+
+
+var a= 'pdf';
+if(a!=undefined){
+	console.log("here");
+}else{
+	console.log("here2");
+}
